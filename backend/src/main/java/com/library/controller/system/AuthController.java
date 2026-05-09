@@ -9,6 +9,8 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -45,5 +47,19 @@ public class AuthController {
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         return Result.success("登出成功", null);
+    }
+
+    @GetMapping("/me")
+    public Result<User> getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return Result.error(401, "未登录");
+        }
+        String username = authentication.getName();
+        User user = authService.getCurrentUser(username);
+        if (user == null) {
+            return Result.error(404, "用户不存在");
+        }
+        return Result.success(user);
     }
 }
