@@ -1,0 +1,18 @@
+# GSD planning
+.planning/
+
+# Dependencies
+node_modules/
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
