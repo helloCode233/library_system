@@ -5,7 +5,6 @@ import com.library.common.Result;
 import com.library.entity.User;
 import com.library.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -49,8 +48,8 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public Result<User> getCurrentUser(Authentication authentication) {
-        User user = userService.getCurrentUser(authentication.getName());
+    public Result<User> getCurrentUser(@RequestHeader("X-User-Id") String username) {
+        User user = userService.getCurrentUser(username);
         user.setPassword(null);
         return Result.success(user);
     }

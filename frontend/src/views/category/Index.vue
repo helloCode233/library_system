@@ -1,40 +1,43 @@
 <template>
-  <div class="category-manage">
-    <div class="toolbar">
-      <el-button type="primary" @click="handleCreate">新增分类</el-button>
+  <div class="page-container">
+    <div class="page-card">
+      <div class="page-card-header">
+        <span class="page-title">分类管理</span>
+        <el-button type="primary" @click="handleCreate">新增分类</el-button>
+      </div>
+      <div class="page-card-body">
+        <el-table :data="tableData" stripe>
+          <el-table-column prop="id" label="ID" width="60" />
+          <el-table-column prop="name" label="分类名称" />
+          <el-table-column prop="description" label="描述" />
+          <el-table-column prop="sort" label="排序" width="60" />
+          <el-table-column prop="status" label="状态" width="80">
+            <template #default="{ row }">
+              <el-tag :type="row.status === 1 ? 'success' : 'danger'" size="small">
+                {{ row.status === 1 ? '启用' : '禁用' }}
+              </el-tag>
+            </template>
+          </el-table-column>
+          <el-table-column label="操作" width="160">
+            <template #default="{ row }">
+              <el-button link type="primary" size="small" @click="handleEdit(row)">编辑</el-button>
+              <el-button link type="danger" size="small" @click="handleDelete(row)">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+        <el-pagination
+          v-model:current-page="pageNum"
+          v-model:page-size="pageSize"
+          :total="total"
+          layout="total, prev, pager, next"
+          style="margin-top:16px"
+          @current-change="loadData"
+        />
+      </div>
     </div>
 
-    <el-table :data="tableData" border style="margin-top: 10px">
-      <el-table-column prop="id" label="ID" width="60" />
-      <el-table-column prop="name" label="分类名称" />
-      <el-table-column prop="description" label="描述" />
-      <el-table-column prop="sort" label="排序" width="80" />
-      <el-table-column prop="status" label="状态" width="80">
-        <template #default="{ row }">
-          <el-tag :type="row.status === 1 ? 'success' : 'danger'">
-            {{ row.status === 1 ? '启用' : '禁用' }}
-          </el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column label="操作" width="180">
-        <template #default="{ row }">
-          <el-button link type="primary" size="small" @click="handleEdit(row)">编辑</el-button>
-          <el-button link type="danger" size="small" @click="handleDelete(row)">删除</el-button>
-        </template>
-      </el-table-column>
-    </el-table>
-
-    <el-pagination
-      v-model:current-page="pageNum"
-      v-model:page-size="pageSize"
-      :total="total"
-      layout="total, prev, pager, next"
-      style="margin-top: 10px"
-      @current-change="loadData"
-    />
-
-    <el-dialog v-model="dialogVisible" :title="dialogTitle" width="500px">
-      <el-form ref="formRef" :model="form" label-width="80">
+    <el-dialog v-model="dialogVisible" :title="dialogTitle" width="480px" destroy-on-close>
+      <el-form ref="formRef" :model="form" label-width="70px">
         <el-form-item label="分类名称" prop="name">
           <el-input v-model="form.name" />
         </el-form-item>
@@ -71,61 +74,27 @@ const total = ref(0)
 const dialogVisible = ref(false)
 const dialogTitle = ref('新增分类')
 const formRef = ref(null)
-
-const form = reactive({
-  id: null,
-  name: '',
-  description: '',
-  sort: 0,
-  status: 1
-})
+const form = reactive({ id: null, name: '', description: '', sort: 0, status: 1 })
 
 const loadData = async () => {
   const res = await getCategoryList({ pageNum: pageNum.value, pageSize: pageSize.value })
-  if (res.code === 200) {
-    tableData.value = res.data.records || []
-    total.value = res.data.total || 0
-  }
+  if (res.code === 200) { tableData.value = res.data.records || []; total.value = res.data.total || 0 }
 }
-
 const handleCreate = () => {
   Object.assign(form, { id: null, name: '', description: '', sort: 0, status: 1 })
-  dialogTitle.value = '新增分类'
-  dialogVisible.value = true
+  dialogTitle.value = '新增分类'; dialogVisible.value = true
 }
-
 const handleEdit = (row) => {
   Object.assign(form, { id: row.id, name: row.name, description: row.description, sort: row.sort, status: row.status })
-  dialogTitle.value = '编辑分类'
-  dialogVisible.value = true
+  dialogTitle.value = '编辑分类'; dialogVisible.value = true
 }
-
 const handleSave = async () => {
-  if (form.id) {
-    await updateCategory(form)
-  } else {
-    await createCategory(form)
-  }
-  dialogVisible.value = false
-  ElMessage.success('保存成功')
-  loadData()
+  if (form.id) { await updateCategory(form) } else { await createCategory(form) }
+  dialogVisible.value = false; ElMessage.success('保存成功'); loadData()
 }
-
 const handleDelete = async (row) => {
-  await ElMessageBox.confirm('确认删除?', '提示')
-  await deleteCategory(row.id)
-  ElMessage.success('删除成功')
-  loadData()
+  await ElMessageBox.confirm('确认删除该分类？', '提示', { type: 'warning' })
+  await deleteCategory(row.id); ElMessage.success('删除成功'); loadData()
 }
-
-onMounted(() => {
-  loadData()
-})
+onMounted(() => { loadData() })
 </script>
-
-<style scoped>
-.toolbar {
-  display: flex;
-  align-items: center;
-}
-</style>

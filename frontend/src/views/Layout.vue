@@ -1,15 +1,27 @@
 <template>
-  <el-container class="layout-container">
-    <el-aside width="200px" class="aside">
-      <div class="logo">图书馆管理系统</div>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-brand" @click="$router.push('/dashboard')">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+        </div>
+        <span class="brand-text">图书馆管理</span>
+      </div>
       <el-menu
         :default-active="activeMenu"
         router
-        class="menu"
+        class="sidebar-menu"
+        background-color="transparent"
+        text-color="rgba(255,255,255,0.65)"
+        active-text-color="#fff"
       >
         <el-menu-item index="/dashboard">
           <el-icon><HomeFilled /></el-icon>
-          <span>首页</span>
+          <span>首页概览</span>
         </el-menu-item>
         <el-sub-menu index="/system">
           <template #title>
@@ -20,34 +32,62 @@
           <el-menu-item index="/system/role">角色管理</el-menu-item>
           <el-menu-item index="/system/menu">菜单管理</el-menu-item>
         </el-sub-menu>
+        <el-sub-menu index="/library">
+          <template #title>
+            <el-icon><Reading /></el-icon>
+            <span>图书馆业务</span>
+          </template>
+          <el-menu-item index="/category">分类管理</el-menu-item>
+          <el-menu-item index="/book">图书管理</el-menu-item>
+          <el-menu-item index="/borrow/my">我的借阅</el-menu-item>
+          <el-menu-item index="/borrow/manage">借阅管理</el-menu-item>
+        </el-sub-menu>
       </el-menu>
-    </el-aside>
-    <el-container>
-      <el-header class="header">
-        <div class="header-content">
-          <span class="username">{{ userStore.userInfo?.nickname || userStore.userInfo?.username }}</span>
-          <el-button type="danger" size="small" @click="handleLogout">退出登录</el-button>
+      <div class="sidebar-footer">
+        <span class="version-tag">v1.0.0</span>
+      </div>
+    </aside>
+
+    <!-- Main Area -->
+    <div class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--color-text-muted)">
+            <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/>
+          </svg>
+          <span class="header-username">{{ userStore.userInfo?.nickname || userStore.userInfo?.username || '未登录' }}</span>
         </div>
-      </el-header>
-      <el-main class="main">
-        <router-view />
-      </el-main>
-    </el-container>
-  </el-container>
+        <div class="header-right">
+          <span class="header-role" v-if="userStore.userInfo?.roleName">{{ userStore.userInfo.roleName }}</span>
+          <button class="logout-btn" @click="handleLogout" title="退出登录">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+            </svg>
+            <span>退出</span>
+          </button>
+        </div>
+      </header>
+      <main class="app-content">
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </main>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { HomeFilled, Setting } from '@element-plus/icons-vue'
+import { HomeFilled, Setting, Reading } from '@element-plus/icons-vue'
 import { ElMessageBox } from 'element-plus'
 import { useUserStore } from '@/stores/user'
-import { logout } from '@/api/auth'
 
 const router = useRouter()
 const route = useRoute()
 const userStore = useUserStore()
-
 const activeMenu = computed(() => route.path)
 
 const handleLogout = async () => {
@@ -57,54 +97,168 @@ const handleLogout = async () => {
       cancelButtonText: '取消',
       type: 'warning'
     })
-    await logout()
-    userStore.token = ''
-    userStore.userInfo = null
+    userStore.logout()
     router.push('/login')
-  } catch (e) {
-    // user cancelled
-  }
+  } catch { /* cancelled */ }
 }
 </script>
 
 <style scoped>
-.layout-container {
+.app-layout {
+  display: flex;
   height: 100vh;
+  overflow: hidden;
 }
-.aside {
-  background: #304156;
+
+/* Sidebar */
+.app-sidebar {
+  width: var(--sidebar-width);
+  background: linear-gradient(180deg, #4C1D95 0%, #5B21B6 40%, #7C3AED 100%);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: relative;
 }
-.logo {
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
+.sidebar-brand {
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brand-icon {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.brand-icon svg {
+  width: 18px; height: 18px;
   color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  background: #263445;
 }
-.menu {
+.brand-text {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Menu */
+.sidebar-menu {
+  flex: 1;
+  border-right: none;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+.sidebar-menu :deep(.el-menu-item),
+.sidebar-menu :deep(.el-sub-menu__title) {
+  margin: 2px 8px;
+  border-radius: 8px;
+  height: 42px;
+  line-height: 42px;
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease;
+}
+.sidebar-menu :deep(.el-menu-item:hover),
+.sidebar-menu :deep(.el-sub-menu__title:hover) {
+  background: rgba(255,255,255,0.1) !important;
+}
+.sidebar-menu :deep(.el-menu-item.is-active) {
+  background: rgba(255,255,255,0.18) !important;
+  font-weight: 500;
+}
+.sidebar-menu :deep(.el-sub-menu .el-menu) {
+  background: rgba(0,0,0,0.12) !important;
+}
+.sidebar-menu :deep(.el-sub-menu .el-menu-item) {
+  padding-left: 52px !important;
+  height: 38px;
+  line-height: 38px;
+  font-size: var(--font-size-sm);
+}
+
+.sidebar-footer {
+  padding: 12px 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.version-tag {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 1px;
+}
+
+/* Header */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.app-header {
+  height: var(--navbar-height);
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+  flex-shrink: 0;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-username {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text);
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+}
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
   border: none;
-  background: #304156;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  transition: all 0.2s ease;
 }
-.header {
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
+.logout-btn svg {
+  width: 16px; height: 16px;
 }
-.header-content {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 15px;
+.logout-btn:hover {
+  background: #FEE2E2;
+  color: var(--color-danger);
 }
-.username {
-  color: #333;
-}
-.main {
-  background: #f0f2f5;
-  padding: 20px;
+
+/* Content */
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--color-bg);
 }
 </style>

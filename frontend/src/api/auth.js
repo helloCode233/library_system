@@ -1,24 +1,31 @@
-import request from './request'
+import axios from 'axios'
+import { ElMessage } from 'element-plus'
+
+const authRequest = axios.create({
+  baseURL: '/auth',
+  timeout: 10000
+})
+
+authRequest.interceptors.response.use(
+  response => response.data,
+  error => {
+    ElMessage.error(error.response?.data?.message || '请求失败')
+    return Promise.reject(error)
+  }
+)
 
 export function login(data) {
-  return request({
-    url: '/auth/login',
+  return authRequest({
+    url: '/login',
     method: 'post',
     data
   })
 }
 
 export function register(data) {
-  return request({
-    url: '/auth/register',
+  return authRequest({
+    url: '/register',
     method: 'post',
     data
-  })
-}
-
-export function logout() {
-  return request({
-    url: '/auth/logout',
-    method: 'post'
   })
 }

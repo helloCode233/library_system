@@ -1,16 +1,13 @@
-package com.library.service.impl;
+package com.library.auth.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.library.dto.LoginRequest;
-import com.library.dto.LoginResponse;
-import com.library.entity.User;
-import com.library.mapper.UserMapper;
-import com.library.security.JwtTokenProvider;
+import com.library.auth.dto.LoginRequest;
+import com.library.auth.dto.LoginResponse;
+import com.library.auth.entity.User;
+import com.library.auth.mapper.UserMapper;
+import com.library.auth.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,28 +15,25 @@ import org.springframework.stereotype.Service;
 public class AuthServiceImpl {
 
     @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private JwtTokenProvider tokenProvider;
+    private JwtUtil jwtUtil;
 
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public LoginResponse login(LoginRequest request) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
-        );
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-
-        String token = tokenProvider.generateToken(authentication);
-
         User user = userMapper.selectOne(
                 new LambdaQueryWrapper<User>().eq(User::getUsername, request.getUsername())
         );
+        if (user == null) {
+            throw new RuntimeException("用户名或密码错误");
+        }
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            throw new RuntimeException("用户名或密码错误");
+        }
+
+        String token = jwtUtil.generateToken(user.getUsername());
 
         LoginResponse.UserInfo userInfo = LoginResponse.UserInfo.builder()
                 .id(user.getId())
