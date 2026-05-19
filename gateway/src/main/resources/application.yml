@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP
+    gateway:
+      routes:
+        - id: auth-route
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+        - id: library-route
+          uri: lb://library-system
+          predicates:
+            - Path=/api/**
+jwt:
+  secret: library-secret-key-for-jwt-token-generation-must-be-long-enough

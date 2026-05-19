@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS library DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS `library` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE library;
+USE `library`;
 
 -- 用户表
 CREATE TABLE sys_user (
@@ -72,7 +72,7 @@ INSERT INTO sys_role (role_name, description) VALUES ('普通用户', '普通用
 
 -- admin / admin123 BCrypt hash
 INSERT INTO sys_user (username, password, nickname, role_id) VALUES
-  ('admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iAt6Z5EH', '系统管理员', 1);
+  ('admin', '$2a$10$pmpb.MYu84w7wfqtTQkGj.KVrRcc3tFCoDagbmlgtB1xcCh457w4C', '系统管理员', 1);
 
 -- 初始菜单
 INSERT INTO sys_menu (menu_name, parent_id, path, component, icon, sort, perms, menu_type) VALUES

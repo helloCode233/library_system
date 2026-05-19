@@ -7,11 +7,10 @@ import com.library.entity.UserRole;
 import com.library.mapper.UserMapper;
 import com.library.mapper.UserRoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class UserServiceImpl {
@@ -22,8 +21,7 @@ public class UserServiceImpl {
     @Autowired
     private UserRoleMapper userRoleMapper;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public Page<User> list(Integer pageNum, Integer pageSize, String username) {
         Page<User> page = new Page<>(pageNum, pageSize);

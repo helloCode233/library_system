@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: library-system
   datasource:
     url: jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: Wu360vs32
   cloud:
     nacos:
       discovery:
