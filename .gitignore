@@ -1,6 +1,4 @@
 # GSD planning
-.planning/
-CLAUDE.md
 *.pdf
 # Build
 frontend/dist/
