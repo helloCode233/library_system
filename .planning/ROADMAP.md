@@ -88,9 +88,9 @@
 **Goal:** 添加 AI 智能搜索、图书推荐、借阅洞察功能
 **Requirements:** AI-01, AI-02, AI-03
 **Depends on:** Phase 2
-**Plans:** 3 plans
+**Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 02.1-01-PLAN.md — AI 基础设施 + 智能搜索（TF-IDF 语义搜索）
-- [ ] 02.1-02-PLAN.md — AI 图书推荐（内容相似度 + 借阅历史推荐）
-- [ ] 02.1-03-PLAN.md — AI 借阅洞察（热门排行 + 趋势 + 分类分布）
+- [x] 02.1-01-PLAN.md — AI 基础设施 + 智能搜索（TF-IDF 语义搜索）
+- [x] 02.1-02-PLAN.md — AI 图书推荐（内容相似度 + 借阅历史推荐）
+- [x] 02.1-03-PLAN.md — AI 借阅洞察（热门排行 + 趋势 + 分类分布）
