@@ -9,7 +9,7 @@
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
           </svg>
         </div>
-        <span class="brand-text">图书馆管理</span>
+        <span class="brand-text">AI智能图书管理</span>
       </div>
       <el-menu
         :default-active="activeMenu"

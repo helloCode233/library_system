@@ -1,4 +1,4 @@
-# ROADMAP: 图书馆管理系统
+# ROADMAP: AI智能图书管理系统
 
 **Created:** 2026-05-09
 **Granularity:** Coarse

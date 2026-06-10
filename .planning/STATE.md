@@ -13,7 +13,7 @@ progress:
   percent: 67
 ---
 
-# STATE: 图书馆管理系统
+# STATE: AI智能图书管理系统
 
 **Updated:** 2026-05-09 after Phase 1 completion
 
@@ -21,7 +21,7 @@ progress:
 
 See: .planning/PROJECT.md (updated 2026-05-09)
 
-**Core value:** 微服务架构图书馆管理系统（Nacos服务注册）+ RBAC动态权限 + 图书馆业务
+**Core value:** 微服务架构AI智能图书管理系统（Nacos服务注册）+ RBAC动态权限 + 图书馆业务
 
 **Current phase:** 02.1
 

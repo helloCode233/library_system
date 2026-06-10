@@ -1,4 +1,4 @@
-# UAT Report — 图书馆管理系统
+# UAT Report — AI智能图书管理系统
 
 **Date:** 2026-05-09
 **Status:** ✅ All phases complete, builds pass

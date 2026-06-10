@@ -6,7 +6,7 @@
         <h2 class="welcome-title">
           欢迎回来，{{ userStore.userInfo?.nickname || userStore.userInfo?.username || '管理员' }}
         </h2>
-        <p class="welcome-desc">图书馆管理系统 · 数据概览</p>
+        <p class="welcome-desc">AI智能图书管理系统 · 数据概览</p>
       </div>
       <div class="welcome-date">{{ today }}</div>
     </div>
