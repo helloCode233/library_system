@@ -12,6 +12,10 @@ const routes = [
       { path: '/system/user', name: 'UserManage', component: () => import('../views/system/UserManage.vue') },
       { path: '/system/role', name: 'RoleManage', component: () => import('../views/system/RoleManage.vue') },
       { path: '/system/menu', name: 'MenuManage', component: () => import('../views/system/MenuManage.vue') },
+      // AI智能
+      { path: '/ai/search', name: 'SmartSearch', component: () => import('../views/ai/SmartSearch.vue') },
+      { path: '/ai/recommend', name: 'Recommend', component: () => import('../views/ai/Recommend.vue') },
+      { path: '/ai/hotbooks', name: 'HotBooks', component: () => import('../views/ai/HotBooks.vue') },
       // 图书馆业务
       { path: '/category', name: 'Category', component: () => import('../views/category/Index.vue') },
       { path: '/book', name: 'Book', component: () => import('../views/book/Index.vue') },

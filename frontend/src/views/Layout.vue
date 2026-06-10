@@ -32,6 +32,24 @@
           <el-menu-item index="/system/role">角色管理</el-menu-item>
           <el-menu-item index="/system/menu">菜单管理</el-menu-item>
         </el-sub-menu>
+        <el-sub-menu index="/ai">
+          <template #title>
+            <el-icon><Cpu /></el-icon>
+            <span>AI智能</span>
+          </template>
+          <el-menu-item index="/ai/search">
+            <el-icon><Search /></el-icon>
+            <span>智能搜索</span>
+          </el-menu-item>
+          <el-menu-item index="/ai/recommend">
+            <el-icon><Star /></el-icon>
+            <span>图书推荐</span>
+          </el-menu-item>
+          <el-menu-item index="/ai/hotbooks">
+            <el-icon><TrendCharts /></el-icon>
+            <span>借阅洞察</span>
+          </el-menu-item>
+        </el-sub-menu>
         <el-sub-menu index="/library">
           <template #title>
             <el-icon><Reading /></el-icon>
@@ -81,7 +99,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { HomeFilled, Setting, Reading } from '@element-plus/icons-vue'
+import { HomeFilled, Setting, Reading, Cpu, Star, Search, TrendCharts } from '@element-plus/icons-vue'
 import { ElMessageBox } from 'element-plus'
 import { useUserStore } from '@/stores/user'
 
