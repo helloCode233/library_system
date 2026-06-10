@@ -727,7 +727,7 @@ export function logout() {
     <el-card class="login-card">
       <template #header>
         <div class="card-header">
-          <span>图书馆管理系统</span>
+          <span>AI智能图书管理系统</span>
         </div>
       </template>
       <el-form ref="loginFormRef" :model="loginForm" :rules="rules" label-width="0">

@@ -940,7 +940,7 @@ onMounted(() => {
       </el-col>
     </el-row>
     <el-card style="margin-top: 20px">
-      <template #header>欢迎使用图书馆管理系统</template>
+      <template #header>欢迎使用AI智能图书管理系统</template>
       <p>当前登录用户：{{ userInfo?.nickname || '-' }}</p>
       <p>角色：{{ userInfo?.roleName || '-' }}</p>
     </el-card>

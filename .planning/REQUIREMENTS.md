@@ -1,7 +1,7 @@
-# Requirements: 图书馆管理系统
+# Requirements: AI智能图书管理系统
 
 **Defined:** 2026-05-09
-**Core Value:** 微服务架构图书馆管理系统，包含用户认证、RBAC 动态权限管理和图书馆核心业务
+**Core Value:** 微服务架构AI智能图书管理系统，包含用户认证、RBAC 动态权限管理和图书馆核心业务
 
 ## v1 Requirements
 

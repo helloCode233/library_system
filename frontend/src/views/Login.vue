@@ -13,7 +13,7 @@
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
           </svg>
         </div>
-        <h1 class="login-title">图书馆管理系统</h1>
+        <h1 class="login-title">AI智能图书管理系统</h1>
         <p class="login-subtitle">Library Management System</p>
       </div>
       <el-form

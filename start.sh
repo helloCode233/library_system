@@ -1,5 +1,5 @@
 #!/bin/bash
-# 图书馆管理系统 - 启动脚本
+# AI智能图书管理系统 - 启动脚本
 # 启动顺序: Nacos → auth-service/backend → gateway → frontend
 
 set -e
