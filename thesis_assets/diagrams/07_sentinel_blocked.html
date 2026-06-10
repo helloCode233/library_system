@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Sentinel 限流拦截</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1e1e1e;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;font-family:"SF Mono","Fira Code","Consolas",monospace}
+.container{padding:30px;width:900px}
+.title{text-align:center;font-size:18px;font-weight:bold;margin-bottom:20px;color:#fff}
+.block{margin-bottom:20px}
+.cmd{background:#2d2d2d;color:#e0e0e0;padding:12px 16px;border-radius:6px 6px 0 0;font-size:14px}
+.cmd .prompt{color:#6a9955}
+.cmd .path{color:#ce9178}
+.resp{background:#252526;color:#d4d4d4;padding:16px;border-radius:0 0 6px 6px;font-size:14px;line-height:1.6;white-space:pre-wrap;font-family:inherit}
+.key{color:#9cdcfe}
+.str{color:#ce9178}
+.num{color:#b5cea8}
+.warn{color:#f44747;font-weight:bold}
+.bg-warn{background:#f4474720;display:block;padding:4px 8px;border-left:3px solid #f44747;margin:4px 0}
+</style></head><body>
+<div class="container">
+<div class="title">图7 Sentinel 限流触发 — 第3次请求被拦截</div>
+<div class="block">
+<div class="cmd"><span class="prompt">$</span> curl -s <span class="path">http://localhost:8080/api/service-b/inner/identity</span> \
+  -H "Authorization: Bearer $TOKEN" | jq</div>
+<div class="resp">{
+  <span class="key">"code"</span>: <span class="num">429</span>,
+  <span class="key">"message"</span>: <span class="str">"Blocked by Sentinel (flow limiting)"</span>,
+  <span class="key">"data"</span>: <span class="bool">null</span>
+}
+<span class="bg-warn"><span class="warn">!</span> 快速连续发送 3 个请求后，第 3 个请求被 Sentinel 拦截</span></div>
+</div>
+</div></body></html>
