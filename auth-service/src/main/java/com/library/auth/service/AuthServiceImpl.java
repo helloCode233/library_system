@@ -3,7 +3,9 @@ package com.library.auth.service;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.library.auth.dto.LoginRequest;
 import com.library.auth.dto.LoginResponse;
+import com.library.auth.entity.Role;
 import com.library.auth.entity.User;
+import com.library.auth.mapper.RoleMapper;
 import com.library.auth.mapper.UserMapper;
 import com.library.auth.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class AuthServiceImpl {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private RoleMapper roleMapper;
+
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public LoginResponse login(LoginRequest request) {
@@ -35,11 +40,19 @@ public class AuthServiceImpl {
 
         String token = jwtUtil.generateToken(user.getUsername());
 
+        String roleName = "普通用户";
+        if (user.getRoleId() != null) {
+            Role role = roleMapper.selectById(user.getRoleId());
+            if (role != null) {
+                roleName = role.getRoleName();
+            }
+        }
+
         LoginResponse.UserInfo userInfo = LoginResponse.UserInfo.builder()
                 .id(user.getId())
                 .username(user.getUsername())
                 .nickname(user.getNickname())
-                .roleName("管理员")
+                .roleName(roleName)
                 .build();
 
         return LoginResponse.builder()
@@ -56,6 +69,9 @@ public class AuthServiceImpl {
             throw new RuntimeException("用户名已存在");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        if (user.getRoleId() == null) {
+            user.setRoleId(2L); // 默认角色：普通用户
+        }
         userMapper.insert(user);
     }
 

@@ -14,19 +14,27 @@
           </svg>
         </div>
         <h1 class="login-title">AI智能图书管理系统</h1>
-        <p class="login-subtitle">Library Management System</p>
+        <p class="login-subtitle">用户注册</p>
       </div>
       <el-form
         ref="formRef"
         :model="form"
         :rules="rules"
         class="login-form"
-        @keyup.enter="handleLogin"
+        @keyup.enter="handleRegister"
       >
         <el-form-item prop="username">
           <el-input
             v-model="form.username"
             placeholder="用户名"
+            size="large"
+            :prefix-icon="UserIcon"
+          />
+        </el-form-item>
+        <el-form-item prop="nickname">
+          <el-input
+            v-model="form.nickname"
+            placeholder="昵称"
             size="large"
             :prefix-icon="UserIcon"
           />
@@ -41,25 +49,34 @@
             :prefix-icon="LockIcon"
           />
         </el-form-item>
+        <el-form-item prop="confirmPassword">
+          <el-input
+            v-model="form.confirmPassword"
+            type="password"
+            placeholder="确认密码"
+            size="large"
+            show-password
+            :prefix-icon="LockIcon"
+          />
+        </el-form-item>
         <el-form-item>
           <el-button
             type="primary"
             size="large"
             class="login-btn"
             :loading="loading"
-            @click="handleLogin"
+            @click="handleRegister"
           >
-            {{ loading ? '登录中...' : '登 录' }}
+            {{ loading ? '注册中...' : '注 册' }}
           </el-button>
         </el-form-item>
       </el-form>
-      <div style="text-align:center;">
+      <div style="text-align:center">
         <span style="font-size:13px;color:var(--color-text-muted)">
-          还没有账号？<router-link to="/register" style="color:#7C3AED">立即注册</router-link>
+          已有账号？<router-link to="/login" style="color:#7C3AED">去登录</router-link>
         </span>
       </div>
     </div>
-    <p class="login-footer">默认账户：admin / admin123</p>
   </div>
 </template>
 
@@ -67,8 +84,7 @@
 import { ref, reactive, h } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { login } from '@/api/auth'
-import { useUserStore } from '@/stores/user'
+import { register } from '@/api/auth'
 
 const svgIcon = (d) => ({
   render() {
@@ -83,31 +99,42 @@ const UserIcon = svgIcon('<circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 
 const LockIcon = svgIcon('<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>')
 
 const router = useRouter()
-const userStore = useUserStore()
 const formRef = ref(null)
 const loading = ref(false)
-const form = reactive({ username: '', password: '' })
-const rules = {
-  username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-  password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+const form = reactive({ username: '', nickname: '', password: '', confirmPassword: '' })
+
+const validateConfirm = (rule, value, callback) => {
+  if (value !== form.password) {
+    callback(new Error('两次密码输入不一致'))
+  } else {
+    callback()
+  }
 }
 
-const handleLogin = async () => {
+const rules = {
+  username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+  nickname: [{ required: true, message: '请输入昵称', trigger: 'blur' }],
+  password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+  confirmPassword: [
+    { required: true, message: '请确认密码', trigger: 'blur' },
+    { validator: validateConfirm, trigger: 'blur' }
+  ]
+}
+
+const handleRegister = async () => {
   const valid = await formRef.value.validate().catch(() => false)
   if (!valid) return
   loading.value = true
   try {
-    const res = await login(form)
-    if (res.code === 200) {
-      userStore.setAuth(res.data.token, res.data.user)
-      ElMessage.success('登录成功')
-      const isAdmin = res.data.user.roleName === '管理员'
-      router.push(isAdmin ? '/dashboard' : '/books')
-    } else {
-      ElMessage.error(res.message || '登录失败')
-    }
+    await register({
+      username: form.username,
+      password: form.password,
+      nickname: form.nickname
+    })
+    ElMessage.success('注册成功，请登录')
+    router.push('/login')
   } catch {
-    ElMessage.error('登录失败，请检查网络')
+    // error handled by interceptor
   } finally {
     loading.value = false
   }
@@ -135,18 +162,9 @@ const handleLogin = async () => {
   border-radius: 50%;
   background: rgba(255,255,255,0.05);
 }
-.shape-1 {
-  width: 600px; height: 600px;
-  top: -200px; right: -150px;
-}
-.shape-2 {
-  width: 400px; height: 400px;
-  bottom: -100px; left: -80px;
-}
-.shape-3 {
-  width: 200px; height: 200px;
-  top: 40%; left: 55%;
-}
+.shape-1 { width: 600px; height: 600px; top: -200px; right: -150px; }
+.shape-2 { width: 400px; height: 400px; bottom: -100px; left: -80px; }
+.shape-3 { width: 200px; height: 200px; top: 40%; left: 55%; }
 .login-card-wrapper {
   position: relative;
   width: 400px;
@@ -156,10 +174,7 @@ const handleLogin = async () => {
   padding: 48px 40px 40px;
   backdrop-filter: blur(10px);
 }
-.login-brand {
-  text-align: center;
-  margin-bottom: 36px;
-}
+.login-brand { text-align: center; margin-bottom: 32px; }
 .login-logo {
   width: 56px; height: 56px;
   margin: 0 auto 16px;
@@ -170,52 +185,20 @@ const handleLogin = async () => {
   justify-content: center;
   color: #fff;
 }
-.login-logo svg {
-  width: 28px; height: 28px;
-}
-.login-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  letter-spacing: 1px;
-}
-.login-subtitle {
-  font-size: 12px;
-  color: var(--color-text-muted);
-  margin-top: 6px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.login-form {
-  margin-top: 8px;
-}
+.login-logo svg { width: 28px; height: 28px; }
+.login-title { font-size: 22px; font-weight: 700; color: var(--color-primary-dark); letter-spacing: 1px; }
+.login-subtitle { font-size: 12px; color: var(--color-text-muted); margin-top: 6px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+.login-form { margin-top: 8px; }
 .login-form :deep(.el-input__wrapper) {
   border-radius: var(--radius-sm);
   box-shadow: 0 0 0 1px var(--color-border) inset;
 }
-.login-form :deep(.el-input__wrapper:hover) {
-  box-shadow: 0 0 0 1px var(--color-primary-light) inset;
-}
-.login-form :deep(.el-input__wrapper.is-focus) {
-  box-shadow: 0 0 0 2px var(--color-primary) inset;
-}
+.login-form :deep(.el-input__wrapper:hover) { box-shadow: 0 0 0 1px var(--color-primary-light) inset; }
+.login-form :deep(.el-input__wrapper.is-focus) { box-shadow: 0 0 0 2px var(--color-primary) inset; }
 .login-btn {
-  width: 100%;
-  border-radius: var(--radius-sm);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  height: 44px;
-  --el-button-bg-color: #7C3AED;
-  --el-button-border-color: #7C3AED;
-  --el-button-hover-bg-color: #6D28D9;
-  --el-button-hover-border-color: #6D28D9;
-}
-.login-footer {
-  position: relative;
-  margin-top: 28px;
-  color: rgba(255,255,255,0.6);
-  font-size: var(--font-size-xs);
+  width: 100%; border-radius: var(--radius-sm); font-size: 16px; font-weight: 600;
+  letter-spacing: 4px; height: 44px;
+  --el-button-bg-color: #7C3AED; --el-button-border-color: #7C3AED;
+  --el-button-hover-bg-color: #6D28D9; --el-button-hover-border-color: #6D28D9;
 }
 </style>
