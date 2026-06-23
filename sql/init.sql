@@ -154,16 +154,18 @@ INSERT INTO sys_book (title, author, isbn, category_id, description, stock, tota
   ('人类简史', '尤瓦尔·赫拉利', '978-7-5322-0003-6', 3, '人类历史综述', 4, 6),
   ('小王子', '安托万·德·圣-埃克苏佩里', '978-7-5322-0004-3', 4, '儿童文学经典', 6, 10);
 
--- AI智能菜单
+-- AI智能菜单 (parent_id uses subquery for reliability across JDBC connections)
 INSERT INTO sys_menu (menu_name, parent_id, path, component, icon, sort, perms, menu_type) VALUES
 ('AI智能', 0, '/ai', NULL, 'Cpu', 3, NULL, 1);
 
-SET @ai_parent_id = LAST_INSERT_ID();
+INSERT INTO sys_menu (menu_name, parent_id, path, component, icon, sort, perms, menu_type)
+SELECT '智能搜索', id, '/ai/search', 'ai/SmartSearch', 'Search', 1, 'ai:search', 1 FROM sys_menu WHERE menu_name = 'AI智能';
 
-INSERT INTO sys_menu (menu_name, parent_id, path, component, icon, sort, perms, menu_type) VALUES
-('智能搜索', @ai_parent_id, '/ai/search', 'ai/SmartSearch', 'Search', 1, 'ai:search', 1),
-('图书推荐', @ai_parent_id, '/ai/recommend', 'ai/Recommend', 'Star', 2, 'ai:recommend', 1),
-('借阅洞察', @ai_parent_id, '/ai/hotbooks', 'ai/HotBooks', 'TrendCharts', 3, 'ai:insight', 1);
+INSERT INTO sys_menu (menu_name, parent_id, path, component, icon, sort, perms, menu_type)
+SELECT '图书推荐', id, '/ai/recommend', 'ai/Recommend', 'Star', 2, 'ai:recommend', 1 FROM sys_menu WHERE menu_name = 'AI智能';
+
+INSERT INTO sys_menu (menu_name, parent_id, path, component, icon, sort, perms, menu_type)
+SELECT '借阅洞察', id, '/ai/hotbooks', 'ai/HotBooks', 'TrendCharts', 3, 'ai:insight', 1 FROM sys_menu WHERE menu_name = 'AI智能';
 
 -- 管理员角色（role_id=1）拥有所有AI菜单权限
 INSERT INTO sys_role_menu (role_id, menu_id)

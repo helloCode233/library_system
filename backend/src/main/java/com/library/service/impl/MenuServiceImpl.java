@@ -43,7 +43,7 @@ public class MenuServiceImpl {
 
     private List<Menu> buildTree(List<Menu> all, Long parentId) {
         return all.stream()
-                .filter(m -> m.getParentId().equals(parentId))
+                .filter(m -> m.getParentId() != null && m.getParentId().equals(parentId))
                 .peek(m -> m.setChildren(buildTree(all, m.getId())))
                 .collect(Collectors.toList());
     }

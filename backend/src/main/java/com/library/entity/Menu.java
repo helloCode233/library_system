@@ -23,6 +23,6 @@ public class Menu {
     private Integer deleted;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
-    // transient field for tree building
+    @TableField(exist = false)
     private List<Menu> children;
 }
