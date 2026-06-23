@@ -1,14 +1,11 @@
 #!/bin/bash
-# 图书馆管理系统 - 启动脚本
+# AI智能图书管理系统 - 启动脚本
 # 启动顺序: Nacos → auth-service/backend → gateway → frontend
 
 set -e
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 NACOS_HOME="$HOME/Code/Homework/nacos-hw/nacos"
 
-echo "============================================"
-echo "  图书馆管理系统 - 启动中..."
-echo "============================================"
 
 # --------------- 1. Nacos ---------------
 echo "[1/5] 检查 Nacos..."

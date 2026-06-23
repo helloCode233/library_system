@@ -1,8 +1,8 @@
-# 图书馆管理系统
+# AI智能图书管理系统
 
 ## What This Is
 
-基于 Spring Cloud + Nacos 的微服务架构图书馆管理系统，包含用户认证、RBAC 动态权限管理和图书馆核心业务（图书管理、借阅管理）。提供 Vue 前端界面，课程作业演示用 MVP。
+基于 Spring Cloud + Nacos 的微服务架构AI智能图书管理系统，包含用户认证、RBAC 动态权限管理和图书馆核心业务（图书管理、借阅管理）。提供 Vue 前端界面，课程作业演示用 MVP。
 
 ## Core Value
 

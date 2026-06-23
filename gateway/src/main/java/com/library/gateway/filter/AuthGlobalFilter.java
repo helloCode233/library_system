@@ -9,6 +9,7 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.core.io.buffer.DataBuffer;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -38,6 +39,15 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
         // 白名单：登录和注册接口直接放行
         if (path.startsWith("/auth/login") || path.startsWith("/auth/register")) {
             return chain.filter(exchange);
+        }
+
+        // 公开浏览：图书和分类的 GET 请求无需登录
+        if (HttpMethod.GET.equals(request.getMethod())) {
+            if (path.equals("/api/book/list")
+                    || path.matches("/api/book/\\d+")
+                    || path.startsWith("/api/category")) {
+                return chain.filter(exchange);
+            }
         }
 
         // 获取 Token

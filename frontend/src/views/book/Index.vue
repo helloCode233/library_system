@@ -3,7 +3,7 @@
     <div class="page-card">
       <div class="page-card-header">
         <span class="page-title">图书管理</span>
-        <el-button type="primary" @click="handleCreate">新增图书</el-button>
+        <el-button type="primary" v-if="isAdmin" @click="handleCreate">新增图书</el-button>
       </div>
       <div class="page-card-body">
         <div class="search-bar" style="margin-bottom:16px">
@@ -28,7 +28,7 @@
               </el-tag>
             </template>
           </el-table-column>
-          <el-table-column label="操作" width="220">
+          <el-table-column v-if="isAdmin" label="操作" width="220">
             <template #default="{ row }">
               <el-button link type="primary" size="small" @click="handleEdit(row)">编辑</el-button>
               <el-button link type="success" size="small" @click="handleBorrow(row)">借书</el-button>
@@ -103,11 +103,15 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { getBookList, createBook, updateBook, deleteBook } from '@/api/book'
 import { getAllCategories } from '@/api/category'
 import { borrowBook } from '@/api/borrow'
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
+const isAdmin = computed(() => userStore.userInfo?.roleName === '管理员')
 
 const tableData = ref([])
 const categories = ref([])

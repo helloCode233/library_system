@@ -9,7 +9,7 @@
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
           </svg>
         </div>
-        <span class="brand-text">图书馆管理</span>
+        <span class="brand-text">AI智能图书管理</span>
       </div>
       <el-menu
         :default-active="activeMenu"
@@ -23,7 +23,11 @@
           <el-icon><HomeFilled /></el-icon>
           <span>首页概览</span>
         </el-menu-item>
-        <el-sub-menu index="/system">
+        <el-menu-item index="/books">
+          <el-icon><Reading /></el-icon>
+          <span>浏览图书</span>
+        </el-menu-item>
+        <el-sub-menu index="/system" v-if="isAdmin">
           <template #title>
             <el-icon><Setting /></el-icon>
             <span>系统管理</span>
@@ -55,10 +59,10 @@
             <el-icon><Reading /></el-icon>
             <span>图书馆业务</span>
           </template>
-          <el-menu-item index="/category">分类管理</el-menu-item>
+          <el-menu-item index="/category" v-if="isAdmin">分类管理</el-menu-item>
           <el-menu-item index="/book">图书管理</el-menu-item>
           <el-menu-item index="/borrow/my">我的借阅</el-menu-item>
-          <el-menu-item index="/borrow/manage">借阅管理</el-menu-item>
+          <el-menu-item index="/borrow/manage" v-if="isAdmin">借阅管理</el-menu-item>
         </el-sub-menu>
       </el-menu>
       <div class="sidebar-footer">
@@ -107,6 +111,7 @@ const router = useRouter()
 const route = useRoute()
 const userStore = useUserStore()
 const activeMenu = computed(() => route.path)
+const isAdmin = computed(() => userStore.userInfo?.roleName === '管理员')
 
 const handleLogout = async () => {
   try {

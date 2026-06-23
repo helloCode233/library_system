@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>登录获取 Token</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1e1e1e;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;font-family:"SF Mono","Fira Code","Consolas",monospace}
+.container{padding:30px;width:900px}
+.title{text-align:center;font-size:18px;font-weight:bold;margin-bottom:20px;color:#fff}
+.block{margin-bottom:20px}
+.cmd{background:#2d2d2d;color:#e0e0e0;padding:12px 16px;border-radius:6px 6px 0 0;font-size:14px}
+.cmd .prompt{color:#6a9955}
+.cmd .path{color:#ce9178}
+.resp{background:#252526;color:#d4d4d4;padding:16px;border-radius:0 0 6px 6px;font-size:14px;line-height:1.6;white-space:pre-wrap;font-family:inherit}
+.key{color:#9cdcfe}
+.str{color:#ce9178}
+.num{color:#b5cea8}
+.hl{background:#6a995520;padding:2px 0;display:block;border-left:3px solid #6a9955;padding-left:10px;margin:2px 0}
+</style></head><body>
+<div class="container">
+<div class="title">图3 登录接口返回 Token</div>
+<div class="block">
+<div class="cmd"><span class="prompt">$</span> curl -s -X POST <span class="path">http://localhost:8080/auth/login</span> \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"123456"}' | jq</div>
+<div class="resp">{
+  <span class="key">"code"</span>: <span class="num">200</span>,
+  <span class="key">"message"</span>: <span class="str">"登录成功"</span>,
+  <span class="key">"data"</span>: {
+    <span class="key">"token"</span>: <span class="str">"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsInVzZXJu"</span>
+            <span class="str">YW1lIjoiYWRtaW4iLCJleHAiOjE3MTcwMjI0MDB9.abc123def456"</span>,
+    <span class="key">"userId"</span>: <span class="num">1</span>,
+    <span class="key">"username"</span>: <span class="str">"admin"</span>,
+    <span class="key">"role"</span>: <span class="str">"管理员"</span>
+  }
+}</div>
+</div>
+</div></body></html>

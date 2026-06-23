@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Sentinel 熔断降级</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1e1e1e;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;font-family:"SF Mono","Fira Code","Consolas",monospace}
+.container{padding:30px;width:900px}
+.title{text-align:center;font-size:18px;font-weight:bold;margin-bottom:20px;color:#fff}
+.block{margin-bottom:20px}
+.cmd{background:#2d2d2d;color:#e0e0e0;padding:12px 16px;border-radius:6px 6px 0 0;font-size:14px}
+.cmd .prompt{color:#6a9955}
+.cmd .path{color:#ce9178}
+.resp{background:#252526;color:#d4d4d4;padding:16px;border-radius:0 0 6px 6px;font-size:14px;line-height:1.6;white-space:pre-wrap;font-family:inherit}
+.key{color:#9cdcfe}
+.str{color:#ce9178}
+.num{color:#b5cea8}
+.warn{color:#fa8c16;font-weight:bold}
+.tag{display:inline-block;background:#fa8c1620;color:#fa8c16;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold}
+</style></head><body>
+<div class="container">
+<div class="title">图8 熔断器打开后 Feign Fallback 降级返回</div>
+<div class="block">
+<div class="cmd"><span class="prompt">$</span> curl -s <span class="path">http://localhost:8080/api/service-a/call-b</span> \
+  -H "Authorization: Bearer $TOKEN" | jq</div>
+<div class="resp">{
+  <span class="key">"code"</span>: <span class="num">500</span>,
+  <span class="key">"message"</span>: <span class="str">"服务降级：service-b 暂不可用，请稍后重试"</span>,
+  <span class="key">"data"</span>: <span class="bool">null</span>
+}
+<span style="color:#fa8c16"><span class="tag">熔断</span> service-b 已关闭，Feign 调用触发 Sentinel 熔断降级</span></div>
+</div>
+</div></body></html>

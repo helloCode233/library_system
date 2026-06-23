@@ -1,9 +1,9 @@
 <!-- GSD:project-start source:PROJECT.md -->
 ## Project
 
-**图书馆管理系统**
+**AI智能图书管理系统**
 
-基于 Spring Cloud + Nacos 的微服务架构图书馆管理系统，包含用户认证、RBAC 动态权限管理和图书馆核心业务（图书管理、借阅管理）。提供 Vue 前端界面，课程作业演示用 MVP。
+基于 Spring Cloud + Nacos 的微服务架构AI智能图书管理系统，包含用户认证、RBAC 动态权限管理和图书馆核心业务（图书管理、借阅管理）。提供 Vue 前端界面，课程作业演示用 MVP。
 
 **Core Value:** 完成课程作业要求：微服务架构（Nacos 服务注册与发现）+ 完整可运行的用户权限系统 + 图书馆业务功能。
 

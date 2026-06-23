@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   { path: '/login', name: 'Login', component: () => import('../views/Login.vue') },
+  { path: '/register', name: 'Register', component: () => import('../views/Register.vue') },
+  { path: '/books', name: 'PublicBooks', component: () => import('../views/public/PublicBooks.vue') },
+  { path: '/books/:id', name: 'PublicBookDetail', component: () => import('../views/public/PublicBookDetail.vue') },
   {
     path: '/',
     component: () => import('../views/Layout.vue'),
@@ -31,15 +34,30 @@ const router = createRouter({
   routes
 })
 
+const PUBLIC_PATHS = ['/login', '/register', '/books']
+
 router.beforeEach((to, from, next) => {
   const token = localStorage.getItem('token')
-  if (to.path !== '/login' && !token) {
-    next('/login')
-  } else if (to.path === '/login' && token) {
-    next('/dashboard')
-  } else {
-    next()
+  const userInfo = JSON.parse(localStorage.getItem('userInfo') || 'null')
+
+  // Allow public routes without token
+  const isPublic = PUBLIC_PATHS.some(p => to.path === p || to.path.startsWith('/books/'))
+  if (isPublic && !token) {
+    return next()
   }
+
+  // No token on protected route → login
+  if (!token) {
+    return next('/login')
+  }
+
+  // Logged-in user on login/register → role-based redirect
+  if ((to.path === '/login' || to.path === '/register') && token) {
+    const isAdmin = userInfo?.roleName === '管理员'
+    return next(isAdmin ? '/dashboard' : '/books')
+  }
+
+  next()
 })
 
 export default router
