@@ -107,7 +107,7 @@ spring:
   application:
     name: library-system
   datasource:
-    url: jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://10.64.244.241:3306/library?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
   cloud:

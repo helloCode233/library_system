@@ -76,7 +76,7 @@ From backend/src/main/resources/application.yml:
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/library
+    url: jdbc:mysql://10.64.244.241:3306/library
     username: root
     password: root
   cloud:

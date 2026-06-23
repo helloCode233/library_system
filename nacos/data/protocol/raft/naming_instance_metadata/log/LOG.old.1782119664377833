@@ -1,0 +1,724 @@
+2026/06/22-17:06:02.636063 8df0 RocksDB version: 8.8.1
+2026/06/22-17:06:02.636213 8df0 Git sha 986b8b9f20893dec811d8ecdb97b6a47f20d322d
+2026/06/22-17:06:02.636249 8df0 Compile date 2023-11-23 10:47:11
+2026/06/22-17:06:02.636268 8df0 DB SUMMARY
+2026/06/22-17:06:02.636290 8df0 Host name (Env):  DESKTOP-9H1CV7U
+2026/06/22-17:06:02.636306 8df0 DB Session ID:  A6KJRFEFMNK28F4WP8SX
+2026/06/22-17:06:02.636851 8df0 SST files in C:\Users\ASUS\IdeaProjects\library_system\nacos\data\protocol\raft\naming_instance_metadata\log dir, Total Num: 0, files: 
+2026/06/22-17:06:02.636923 8df0 Write Ahead Log file in C:\Users\ASUS\IdeaProjects\library_system\nacos\data\protocol\raft\naming_instance_metadata\log: 
+2026/06/22-17:06:02.636945 8df0                         Options.error_if_exists: 0
+2026/06/22-17:06:02.637224 8df0                       Options.create_if_missing: 1
+2026/06/22-17:06:02.637259 8df0                         Options.paranoid_checks: 1
+2026/06/22-17:06:02.637269 8df0             Options.flush_verify_memtable_count: 1
+2026/06/22-17:06:02.637278 8df0          Options.compaction_verify_record_count: 1
+2026/06/22-17:06:02.637284 8df0                               Options.track_and_verify_wals_in_manifest: 0
+2026/06/22-17:06:02.637291 8df0        Options.verify_sst_unique_id_in_manifest: 1
+2026/06/22-17:06:02.637298 8df0                                     Options.env: 0000027B4FE298F0
+2026/06/22-17:06:02.637306 8df0                                      Options.fs: WinFS
+2026/06/22-17:06:02.637313 8df0                                Options.info_log: 0000027B52F5F090
+2026/06/22-17:06:02.637319 8df0                Options.max_file_opening_threads: 16
+2026/06/22-17:06:02.637324 8df0                              Options.statistics: 0000027B545EBB50
+2026/06/22-17:06:02.637329 8df0                              Options.statistics stats level: 3
+2026/06/22-17:06:02.637334 8df0                               Options.use_fsync: 0
+2026/06/22-17:06:02.637339 8df0                       Options.max_log_file_size: 0
+2026/06/22-17:06:02.637344 8df0                  Options.max_manifest_file_size: 1073741824
+2026/06/22-17:06:02.637349 8df0                   Options.log_file_time_to_roll: 0
+2026/06/22-17:06:02.637355 8df0                       Options.keep_log_file_num: 100
+2026/06/22-17:06:02.637362 8df0                    Options.recycle_log_file_num: 0
+2026/06/22-17:06:02.637368 8df0                         Options.allow_fallocate: 1
+2026/06/22-17:06:02.637375 8df0                        Options.allow_mmap_reads: 0
+2026/06/22-17:06:02.637380 8df0                       Options.allow_mmap_writes: 0
+2026/06/22-17:06:02.637385 8df0                        Options.use_direct_reads: 0
+2026/06/22-17:06:02.637390 8df0                        Options.use_direct_io_for_flush_and_compaction: 0
+2026/06/22-17:06:02.637395 8df0          Options.create_missing_column_families: 1
+2026/06/22-17:06:02.637400 8df0                              Options.db_log_dir: 
+2026/06/22-17:06:02.637405 8df0                                 Options.wal_dir: 
+2026/06/22-17:06:02.637410 8df0                Options.table_cache_numshardbits: 6
+2026/06/22-17:06:02.637415 8df0                         Options.WAL_ttl_seconds: 0
+2026/06/22-17:06:02.637420 8df0                       Options.WAL_size_limit_MB: 0
+2026/06/22-17:06:02.637425 8df0                        Options.max_write_batch_group_size_bytes: 1048576
+2026/06/22-17:06:02.637430 8df0             Options.manifest_preallocation_size: 4194304
+2026/06/22-17:06:02.637435 8df0                     Options.is_fd_close_on_exec: 1
+2026/06/22-17:06:02.637441 8df0                   Options.advise_random_on_open: 1
+2026/06/22-17:06:02.637448 8df0                    Options.db_write_buffer_size: 0
+2026/06/22-17:06:02.637455 8df0                    Options.write_buffer_manager: 0000027B540B45F0
+2026/06/22-17:06:02.637462 8df0         Options.access_hint_on_compaction_start: 1
+2026/06/22-17:06:02.637469 8df0           Options.random_access_max_buffer_size: 1048576
+2026/06/22-17:06:02.637476 8df0                      Options.use_adaptive_mutex: 0
+2026/06/22-17:06:02.637580 8df0                            Options.rate_limiter: 0000000000000000
+2026/06/22-17:06:02.637602 8df0     Options.sst_file_manager.rate_bytes_per_sec: 0
+2026/06/22-17:06:02.637609 8df0                       Options.wal_recovery_mode: 2
+2026/06/22-17:06:02.637616 8df0                  Options.enable_thread_tracking: 0
+2026/06/22-17:06:02.637622 8df0                  Options.enable_pipelined_write: 0
+2026/06/22-17:06:02.637629 8df0                  Options.unordered_write: 0
+2026/06/22-17:06:02.637635 8df0         Options.allow_concurrent_memtable_write: 1
+2026/06/22-17:06:02.637641 8df0      Options.enable_write_thread_adaptive_yield: 1
+2026/06/22-17:06:02.637647 8df0             Options.write_thread_max_yield_usec: 100
+2026/06/22-17:06:02.637653 8df0            Options.write_thread_slow_yield_usec: 3
+2026/06/22-17:06:02.637659 8df0                               Options.row_cache: None
+2026/06/22-17:06:02.637666 8df0                              Options.wal_filter: None
+2026/06/22-17:06:02.637673 8df0             Options.avoid_flush_during_recovery: 0
+2026/06/22-17:06:02.637679 8df0             Options.allow_ingest_behind: 0
+2026/06/22-17:06:02.637685 8df0             Options.two_write_queues: 0
+2026/06/22-17:06:02.637692 8df0             Options.manual_wal_flush: 0
+2026/06/22-17:06:02.637698 8df0             Options.wal_compression: 0
+2026/06/22-17:06:02.637705 8df0             Options.atomic_flush: 0
+2026/06/22-17:06:02.637712 8df0             Options.avoid_unnecessary_blocking_io: 0
+2026/06/22-17:06:02.637719 8df0                 Options.persist_stats_to_disk: 0
+2026/06/22-17:06:02.637725 8df0                 Options.write_dbid_to_manifest: 0
+2026/06/22-17:06:02.637731 8df0                 Options.log_readahead_size: 0
+2026/06/22-17:06:02.637739 8df0                 Options.file_checksum_gen_factory: Unknown
+2026/06/22-17:06:02.637746 8df0                 Options.best_efforts_recovery: 0
+2026/06/22-17:06:02.637753 8df0                Options.max_bgerror_resume_count: 2147483647
+2026/06/22-17:06:02.637759 8df0            Options.bgerror_resume_retry_interval: 1000000
+2026/06/22-17:06:02.637766 8df0             Options.allow_data_in_errors: 0
+2026/06/22-17:06:02.637772 8df0             Options.db_host_id: __hostname__
+2026/06/22-17:06:02.637779 8df0             Options.enforce_single_del_contracts: true
+2026/06/22-17:06:02.637787 8df0             Options.max_background_jobs: 2
+2026/06/22-17:06:02.637792 8df0             Options.max_background_compactions: -1
+2026/06/22-17:06:02.637799 8df0             Options.max_subcompactions: 1
+2026/06/22-17:06:02.637806 8df0             Options.avoid_flush_during_shutdown: 0
+2026/06/22-17:06:02.637812 8df0           Options.writable_file_max_buffer_size: 1048576
+2026/06/22-17:06:02.637819 8df0             Options.delayed_write_rate : 16777216
+2026/06/22-17:06:02.637825 8df0             Options.max_total_wal_size: 1073741824
+2026/06/22-17:06:02.637831 8df0             Options.delete_obsolete_files_period_micros: 21600000000
+2026/06/22-17:06:02.637838 8df0                   Options.stats_dump_period_sec: 600
+2026/06/22-17:06:02.637845 8df0                 Options.stats_persist_period_sec: 600
+2026/06/22-17:06:02.637851 8df0                 Options.stats_history_buffer_size: 1048576
+2026/06/22-17:06:02.637857 8df0                          Options.max_open_files: -1
+2026/06/22-17:06:02.637863 8df0                          Options.bytes_per_sync: 0
+2026/06/22-17:06:02.637870 8df0                      Options.wal_bytes_per_sync: 0
+2026/06/22-17:06:02.637877 8df0                   Options.strict_bytes_per_sync: 0
+2026/06/22-17:06:02.637884 8df0       Options.compaction_readahead_size: 2097152
+2026/06/22-17:06:02.637890 8df0                  Options.max_background_flushes: -1
+2026/06/22-17:06:02.637897 8df0 Options.daily_offpeak_time_utc: 
+2026/06/22-17:06:02.637903 8df0 Compression algorithms supported:
+2026/06/22-17:06:02.637910 8df0 	kZSTD supported: 1
+2026/06/22-17:06:02.637917 8df0 	kSnappyCompression supported: 1
+2026/06/22-17:06:02.637924 8df0 	kBZip2Compression supported: 0
+2026/06/22-17:06:02.638032 8df0 	kZlibCompression supported: 1
+2026/06/22-17:06:02.638057 8df0 	kLZ4Compression supported: 1
+2026/06/22-17:06:02.638066 8df0 	kXpressCompression supported: 0
+2026/06/22-17:06:02.638072 8df0 	kLZ4HCCompression supported: 1
+2026/06/22-17:06:02.638079 8df0 	kZSTDNotFinalCompression supported: 1
+2026/06/22-17:06:02.638090 8df0 Fast CRC32 supported: Not supported on x86
+2026/06/22-17:06:02.638097 8df0 DMutex implementation: std::mutex
+2026/06/22-17:06:02.647246 8df0 [db\db_impl\db_impl_open.cc:325] Creating manifest 1 
+2026/06/22-17:06:02.655301 8df0 [db\version_set.cc:5906] Recovering from manifest file: C:\Users\ASUS\IdeaProjects\library_system\nacos\data\protocol\raft\naming_instance_metadata\log/MANIFEST-000001
+2026/06/22-17:06:02.655890 8df0 [db\column_family.cc:618] --------------- Options for column family [default]:
+2026/06/22-17:06:02.655925 8df0               Options.comparator: leveldb.BytewiseComparator
+2026/06/22-17:06:02.655932 8df0           Options.merge_operator: StringAppendOperator
+2026/06/22-17:06:02.655937 8df0        Options.compaction_filter: None
+2026/06/22-17:06:02.655943 8df0        Options.compaction_filter_factory: None
+2026/06/22-17:06:02.655950 8df0  Options.sst_partitioner_factory: None
+2026/06/22-17:06:02.655956 8df0         Options.memtable_factory: SkipListFactory
+2026/06/22-17:06:02.655962 8df0            Options.table_factory: BlockBasedTable
+2026/06/22-17:06:02.655995 8df0            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0000027B517066D0)
+  cache_index_and_filter_blocks: 0
+  cache_index_and_filter_blocks_with_high_priority: 1
+  pin_l0_filter_and_index_blocks_in_cache: 1
+  pin_top_level_index_and_filter: 1
+  index_type: 2
+  data_block_index_type: 0
+  index_shortening: 1
+  data_block_hash_table_util_ratio: 0.750000
+  checksum: 4
+  no_block_cache: 0
+  block_cache: 0000027B540B4510
+  block_cache_name: LRUCache
+  block_cache_options:
+    capacity : 8388608
+    num_shard_bits : 4
+    strict_capacity_limit : 0
+    memory_allocator : None
+    high_pri_pool_ratio: 0.500
+    low_pri_pool_ratio: 0.000
+  persistent_cache: 0000000000000000
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  metadata_block_size: 8192
+  partition_filters: 1
+  use_delta_encoding: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  verify_compression: 0
+  read_amp_bytes_per_bit: 0
+  format_version: 5
+  enable_index_compression: 1
+  block_align: 0
+  max_auto_readahead_size: 262144
+  prepopulate_block_cache: 0
+  initial_auto_readahead_size: 8192
+  num_file_reads_for_auto_readahead: 2
+2026/06/22-17:06:02.656001 8df0        Options.write_buffer_size: 67108864
+2026/06/22-17:06:02.656006 8df0  Options.max_write_buffer_number: 3
+2026/06/22-17:06:02.656011 8df0          Options.compression: Snappy
+2026/06/22-17:06:02.656016 8df0                  Options.bottommost_compression: Disabled
+2026/06/22-17:06:02.656021 8df0       Options.prefix_extractor: rocksdb.FixedPrefix
+2026/06/22-17:06:02.656026 8df0   Options.memtable_insert_with_hint_prefix_extractor: nullptr
+2026/06/22-17:06:02.656031 8df0             Options.num_levels: 7
+2026/06/22-17:06:02.656036 8df0        Options.min_write_buffer_number_to_merge: 1
+2026/06/22-17:06:02.656040 8df0     Options.max_write_buffer_number_to_maintain: 0
+2026/06/22-17:06:02.656045 8df0     Options.max_write_buffer_size_to_maintain: 0
+2026/06/22-17:06:02.656050 8df0            Options.bottommost_compression_opts.window_bits: -14
+2026/06/22-17:06:02.656055 8df0                  Options.bottommost_compression_opts.level: 32767
+2026/06/22-17:06:02.656060 8df0               Options.bottommost_compression_opts.strategy: 0
+2026/06/22-17:06:02.656065 8df0         Options.bottommost_compression_opts.max_dict_bytes: 0
+2026/06/22-17:06:02.656070 8df0         Options.bottommost_compression_opts.zstd_max_train_bytes: 0
+2026/06/22-17:06:02.656074 8df0         Options.bottommost_compression_opts.parallel_threads: 1
+2026/06/22-17:06:02.656079 8df0                  Options.bottommost_compression_opts.enabled: false
+2026/06/22-17:06:02.656097 8df0         Options.bottommost_compression_opts.max_dict_buffer_bytes: 0
+2026/06/22-17:06:02.656109 8df0         Options.bottommost_compression_opts.use_zstd_dict_trainer: true
+2026/06/22-17:06:02.656114 8df0            Options.compression_opts.window_bits: -14
+2026/06/22-17:06:02.656119 8df0                  Options.compression_opts.level: 32767
+2026/06/22-17:06:02.656124 8df0               Options.compression_opts.strategy: 0
+2026/06/22-17:06:02.656128 8df0         Options.compression_opts.max_dict_bytes: 0
+2026/06/22-17:06:02.656133 8df0         Options.compression_opts.zstd_max_train_bytes: 0
+2026/06/22-17:06:02.656138 8df0         Options.compression_opts.use_zstd_dict_trainer: true
+2026/06/22-17:06:02.656143 8df0         Options.compression_opts.parallel_threads: 1
+2026/06/22-17:06:02.656148 8df0                  Options.compression_opts.enabled: false
+2026/06/22-17:06:02.656152 8df0         Options.compression_opts.max_dict_buffer_bytes: 0
+2026/06/22-17:06:02.656157 8df0      Options.level0_file_num_compaction_trigger: 10
+2026/06/22-17:06:02.656162 8df0          Options.level0_slowdown_writes_trigger: 20
+2026/06/22-17:06:02.656167 8df0              Options.level0_stop_writes_trigger: 40
+2026/06/22-17:06:02.656171 8df0                   Options.target_file_size_base: 67108864
+2026/06/22-17:06:02.656176 8df0             Options.target_file_size_multiplier: 1
+2026/06/22-17:06:02.656181 8df0                Options.max_bytes_for_level_base: 536870912
+2026/06/22-17:06:02.656185 8df0 Options.level_compaction_dynamic_level_bytes: 1
+2026/06/22-17:06:02.656190 8df0          Options.max_bytes_for_level_multiplier: 10.000000
+2026/06/22-17:06:02.656196 8df0 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2026/06/22-17:06:02.656201 8df0 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2026/06/22-17:06:02.656206 8df0 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2026/06/22-17:06:02.656211 8df0 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2026/06/22-17:06:02.656216 8df0 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2026/06/22-17:06:02.656223 8df0 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2026/06/22-17:06:02.656229 8df0 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2026/06/22-17:06:02.656236 8df0       Options.max_sequential_skip_in_iterations: 8
+2026/06/22-17:06:02.656242 8df0                    Options.max_compaction_bytes: 1677721600
+2026/06/22-17:06:02.656249 8df0   Options.ignore_max_compaction_bytes_for_input: true
+2026/06/22-17:06:02.656255 8df0                        Options.arena_block_size: 1048576
+2026/06/22-17:06:02.656262 8df0   Options.soft_pending_compaction_bytes_limit: 68719476736
+2026/06/22-17:06:02.656270 8df0   Options.hard_pending_compaction_bytes_limit: 274877906944
+2026/06/22-17:06:02.656277 8df0                Options.disable_auto_compactions: 0
+2026/06/22-17:06:02.656285 8df0                        Options.compaction_style: kCompactionStyleLevel
+2026/06/22-17:06:02.656292 8df0                          Options.compaction_pri: kMinOverlappingRatio
+2026/06/22-17:06:02.656299 8df0 Options.compaction_options_universal.size_ratio: 1
+2026/06/22-17:06:02.656305 8df0 Options.compaction_options_universal.min_merge_width: 2
+2026/06/22-17:06:02.656312 8df0 Options.compaction_options_universal.max_merge_width: 4294967295
+2026/06/22-17:06:02.656319 8df0 Options.compaction_options_universal.max_size_amplification_percent: 200
+2026/06/22-17:06:02.656325 8df0 Options.compaction_options_universal.compression_size_percent: -1
+2026/06/22-17:06:02.656332 8df0 Options.compaction_options_universal.stop_style: kCompactionStopStyleTotalSize
+2026/06/22-17:06:02.656339 8df0 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2026/06/22-17:06:02.656345 8df0 Options.compaction_options_fifo.allow_compaction: 0
+2026/06/22-17:06:02.656356 8df0                   Options.table_properties_collectors: 
+2026/06/22-17:06:02.656362 8df0                   Options.inplace_update_support: 0
+2026/06/22-17:06:02.656369 8df0                 Options.inplace_update_num_locks: 10000
+2026/06/22-17:06:02.656467 8df0               Options.memtable_prefix_bloom_size_ratio: 0.125000
+2026/06/22-17:06:02.656484 8df0               Options.memtable_whole_key_filtering: 0
+2026/06/22-17:06:02.656491 8df0   Options.memtable_huge_page_size: 0
+2026/06/22-17:06:02.656497 8df0                           Options.bloom_locality: 0
+2026/06/22-17:06:02.656503 8df0                    Options.max_successive_merges: 0
+2026/06/22-17:06:02.656509 8df0                Options.optimize_filters_for_hits: 0
+2026/06/22-17:06:02.656515 8df0                Options.paranoid_file_checks: 0
+2026/06/22-17:06:02.656522 8df0                Options.force_consistency_checks: 1
+2026/06/22-17:06:02.656527 8df0                Options.report_bg_io_stats: 0
+2026/06/22-17:06:02.656535 8df0                               Options.ttl: 2592000
+2026/06/22-17:06:02.656542 8df0          Options.periodic_compaction_seconds: 0
+2026/06/22-17:06:02.656548 8df0                        Options.default_temperature: kUnknown
+2026/06/22-17:06:02.656556 8df0  Options.preclude_last_level_data_seconds: 0
+2026/06/22-17:06:02.656562 8df0    Options.preserve_internal_time_seconds: 0
+2026/06/22-17:06:02.656568 8df0                       Options.enable_blob_files: false
+2026/06/22-17:06:02.656574 8df0                           Options.min_blob_size: 0
+2026/06/22-17:06:02.656580 8df0                          Options.blob_file_size: 268435456
+2026/06/22-17:06:02.656586 8df0                   Options.blob_compression_type: NoCompression
+2026/06/22-17:06:02.656593 8df0          Options.enable_blob_garbage_collection: false
+2026/06/22-17:06:02.656599 8df0      Options.blob_garbage_collection_age_cutoff: 0.250000
+2026/06/22-17:06:02.656606 8df0 Options.blob_garbage_collection_force_threshold: 1.000000
+2026/06/22-17:06:02.656613 8df0          Options.blob_compaction_readahead_size: 0
+2026/06/22-17:06:02.656619 8df0                Options.blob_file_starting_level: 0
+2026/06/22-17:06:02.656626 8df0         Options.experimental_mempurge_threshold: 0.000000
+2026/06/22-17:06:02.656633 8df0            Options.memtable_max_range_deletions: 0
+2026/06/22-17:06:02.662449 8df0 [db\version_set.cc:5957] Recovered from manifest file:C:\Users\ASUS\IdeaProjects\library_system\nacos\data\protocol\raft\naming_instance_metadata\log/MANIFEST-000001 succeeded,manifest_file_number is 1, next_file_number is 3, last_sequence is 0, log_number is 0,prev_log_number is 0,max_column_family is 0,min_log_number_to_keep is 0
+2026/06/22-17:06:02.662487 8df0 [db\version_set.cc:5966] Column family [default] (ID 0), log number is 0
+2026/06/22-17:06:02.663399 8df0 [db\db_impl\db_impl_open.cc:646] DB ID: 9715acdb-6e19-11f1-8a38-005056c00008
+2026/06/22-17:06:02.666016 8df0 [db\version_set.cc:5417] Creating manifest 5
+2026/06/22-17:06:02.672665 8df0 [db\column_family.cc:618] --------------- Options for column family [Configuration]:
+2026/06/22-17:06:02.672728 8df0               Options.comparator: leveldb.BytewiseComparator
+2026/06/22-17:06:02.672736 8df0           Options.merge_operator: StringAppendOperator
+2026/06/22-17:06:02.672743 8df0        Options.compaction_filter: None
+2026/06/22-17:06:02.672750 8df0        Options.compaction_filter_factory: None
+2026/06/22-17:06:02.672756 8df0  Options.sst_partitioner_factory: None
+2026/06/22-17:06:02.672763 8df0         Options.memtable_factory: SkipListFactory
+2026/06/22-17:06:02.672770 8df0            Options.table_factory: BlockBasedTable
+2026/06/22-17:06:02.672809 8df0            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0000027B517066D0)
+  cache_index_and_filter_blocks: 0
+  cache_index_and_filter_blocks_with_high_priority: 1
+  pin_l0_filter_and_index_blocks_in_cache: 1
+  pin_top_level_index_and_filter: 1
+  index_type: 2
+  data_block_index_type: 0
+  index_shortening: 1
+  data_block_hash_table_util_ratio: 0.750000
+  checksum: 4
+  no_block_cache: 0
+  block_cache: 0000027B540B4510
+  block_cache_name: LRUCache
+  block_cache_options:
+    capacity : 8388608
+    num_shard_bits : 4
+    strict_capacity_limit : 0
+    memory_allocator : None
+    high_pri_pool_ratio: 0.500
+    low_pri_pool_ratio: 0.000
+  persistent_cache: 0000000000000000
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  metadata_block_size: 8192
+  partition_filters: 1
+  use_delta_encoding: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  verify_compression: 0
+  read_amp_bytes_per_bit: 0
+  format_version: 5
+  enable_index_compression: 1
+  block_align: 0
+  max_auto_readahead_size: 262144
+  prepopulate_block_cache: 0
+  initial_auto_readahead_size: 8192
+  num_file_reads_for_auto_readahead: 2
+2026/06/22-17:06:02.672831 8df0        Options.write_buffer_size: 67108864
+2026/06/22-17:06:02.672845 8df0  Options.max_write_buffer_number: 3
+2026/06/22-17:06:02.672853 8df0          Options.compression: Snappy
+2026/06/22-17:06:02.672860 8df0                  Options.bottommost_compression: Disabled
+2026/06/22-17:06:02.672867 8df0       Options.prefix_extractor: rocksdb.FixedPrefix
+2026/06/22-17:06:02.672874 8df0   Options.memtable_insert_with_hint_prefix_extractor: nullptr
+2026/06/22-17:06:02.672880 8df0             Options.num_levels: 7
+2026/06/22-17:06:02.672887 8df0        Options.min_write_buffer_number_to_merge: 1
+2026/06/22-17:06:02.672893 8df0     Options.max_write_buffer_number_to_maintain: 0
+2026/06/22-17:06:02.672900 8df0     Options.max_write_buffer_size_to_maintain: 0
+2026/06/22-17:06:02.672906 8df0            Options.bottommost_compression_opts.window_bits: -14
+2026/06/22-17:06:02.672913 8df0                  Options.bottommost_compression_opts.level: 32767
+2026/06/22-17:06:02.672919 8df0               Options.bottommost_compression_opts.strategy: 0
+2026/06/22-17:06:02.672926 8df0         Options.bottommost_compression_opts.max_dict_bytes: 0
+2026/06/22-17:06:02.672932 8df0         Options.bottommost_compression_opts.zstd_max_train_bytes: 0
+2026/06/22-17:06:02.672940 8df0         Options.bottommost_compression_opts.parallel_threads: 1
+2026/06/22-17:06:02.672946 8df0                  Options.bottommost_compression_opts.enabled: false
+2026/06/22-17:06:02.672953 8df0         Options.bottommost_compression_opts.max_dict_buffer_bytes: 0
+2026/06/22-17:06:02.672959 8df0         Options.bottommost_compression_opts.use_zstd_dict_trainer: true
+2026/06/22-17:06:02.672965 8df0            Options.compression_opts.window_bits: -14
+2026/06/22-17:06:02.672971 8df0                  Options.compression_opts.level: 32767
+2026/06/22-17:06:02.672977 8df0               Options.compression_opts.strategy: 0
+2026/06/22-17:06:02.672983 8df0         Options.compression_opts.max_dict_bytes: 0
+2026/06/22-17:06:02.672989 8df0         Options.compression_opts.zstd_max_train_bytes: 0
+2026/06/22-17:06:02.672996 8df0         Options.compression_opts.use_zstd_dict_trainer: true
+2026/06/22-17:06:02.673002 8df0         Options.compression_opts.parallel_threads: 1
+2026/06/22-17:06:02.673008 8df0                  Options.compression_opts.enabled: false
+2026/06/22-17:06:02.673014 8df0         Options.compression_opts.max_dict_buffer_bytes: 0
+2026/06/22-17:06:02.673020 8df0      Options.level0_file_num_compaction_trigger: 10
+2026/06/22-17:06:02.673026 8df0          Options.level0_slowdown_writes_trigger: 20
+2026/06/22-17:06:02.673033 8df0              Options.level0_stop_writes_trigger: 40
+2026/06/22-17:06:02.673039 8df0                   Options.target_file_size_base: 67108864
+2026/06/22-17:06:02.673045 8df0             Options.target_file_size_multiplier: 1
+2026/06/22-17:06:02.673051 8df0                Options.max_bytes_for_level_base: 536870912
+2026/06/22-17:06:02.673058 8df0 Options.level_compaction_dynamic_level_bytes: 1
+2026/06/22-17:06:02.673064 8df0          Options.max_bytes_for_level_multiplier: 10.000000
+2026/06/22-17:06:02.673074 8df0 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2026/06/22-17:06:02.673080 8df0 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2026/06/22-17:06:02.673087 8df0 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2026/06/22-17:06:02.673093 8df0 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2026/06/22-17:06:02.673106 8df0 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2026/06/22-17:06:02.673116 8df0 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2026/06/22-17:06:02.673122 8df0 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2026/06/22-17:06:02.673128 8df0       Options.max_sequential_skip_in_iterations: 8
+2026/06/22-17:06:02.673134 8df0                    Options.max_compaction_bytes: 1677721600
+2026/06/22-17:06:02.673140 8df0   Options.ignore_max_compaction_bytes_for_input: true
+2026/06/22-17:06:02.673147 8df0                        Options.arena_block_size: 1048576
+2026/06/22-17:06:02.673153 8df0   Options.soft_pending_compaction_bytes_limit: 68719476736
+2026/06/22-17:06:02.673160 8df0   Options.hard_pending_compaction_bytes_limit: 274877906944
+2026/06/22-17:06:02.673166 8df0                Options.disable_auto_compactions: 0
+2026/06/22-17:06:02.673176 8df0                        Options.compaction_style: kCompactionStyleLevel
+2026/06/22-17:06:02.673183 8df0                          Options.compaction_pri: kMinOverlappingRatio
+2026/06/22-17:06:02.673190 8df0 Options.compaction_options_universal.size_ratio: 1
+2026/06/22-17:06:02.673197 8df0 Options.compaction_options_universal.min_merge_width: 2
+2026/06/22-17:06:02.673204 8df0 Options.compaction_options_universal.max_merge_width: 4294967295
+2026/06/22-17:06:02.673210 8df0 Options.compaction_options_universal.max_size_amplification_percent: 200
+2026/06/22-17:06:02.673216 8df0 Options.compaction_options_universal.compression_size_percent: -1
+2026/06/22-17:06:02.673224 8df0 Options.compaction_options_universal.stop_style: kCompactionStopStyleTotalSize
+2026/06/22-17:06:02.673230 8df0 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2026/06/22-17:06:02.673235 8df0 Options.compaction_options_fifo.allow_compaction: 0
+2026/06/22-17:06:02.673247 8df0                   Options.table_properties_collectors: 
+2026/06/22-17:06:02.673253 8df0                   Options.inplace_update_support: 0
+2026/06/22-17:06:02.673260 8df0                 Options.inplace_update_num_locks: 10000
+2026/06/22-17:06:02.673266 8df0               Options.memtable_prefix_bloom_size_ratio: 0.125000
+2026/06/22-17:06:02.673274 8df0               Options.memtable_whole_key_filtering: 0
+2026/06/22-17:06:02.673280 8df0   Options.memtable_huge_page_size: 0
+2026/06/22-17:06:02.673287 8df0                           Options.bloom_locality: 0
+2026/06/22-17:06:02.673293 8df0                    Options.max_successive_merges: 0
+2026/06/22-17:06:02.673299 8df0                Options.optimize_filters_for_hits: 0
+2026/06/22-17:06:02.673305 8df0                Options.paranoid_file_checks: 0
+2026/06/22-17:06:02.673311 8df0                Options.force_consistency_checks: 1
+2026/06/22-17:06:02.673317 8df0                Options.report_bg_io_stats: 0
+2026/06/22-17:06:02.673323 8df0                               Options.ttl: 2592000
+2026/06/22-17:06:02.673329 8df0          Options.periodic_compaction_seconds: 0
+2026/06/22-17:06:02.673336 8df0                        Options.default_temperature: kUnknown
+2026/06/22-17:06:02.673342 8df0  Options.preclude_last_level_data_seconds: 0
+2026/06/22-17:06:02.673348 8df0    Options.preserve_internal_time_seconds: 0
+2026/06/22-17:06:02.673354 8df0                       Options.enable_blob_files: false
+2026/06/22-17:06:02.673360 8df0                           Options.min_blob_size: 0
+2026/06/22-17:06:02.673366 8df0                          Options.blob_file_size: 268435456
+2026/06/22-17:06:02.673373 8df0                   Options.blob_compression_type: NoCompression
+2026/06/22-17:06:02.673380 8df0          Options.enable_blob_garbage_collection: false
+2026/06/22-17:06:02.673386 8df0      Options.blob_garbage_collection_age_cutoff: 0.250000
+2026/06/22-17:06:02.673394 8df0 Options.blob_garbage_collection_force_threshold: 1.000000
+2026/06/22-17:06:02.673401 8df0          Options.blob_compaction_readahead_size: 0
+2026/06/22-17:06:02.673407 8df0                Options.blob_file_starting_level: 0
+2026/06/22-17:06:02.673414 8df0         Options.experimental_mempurge_threshold: 0.000000
+2026/06/22-17:06:02.673430 8df0            Options.memtable_max_range_deletions: 0
+2026/06/22-17:06:02.677122 8df0 [db\db_impl\db_impl.cc:3565] Created column family [Configuration] (ID 1)
+2026/06/22-17:06:02.686161 8df0 [db\db_impl\db_impl_open.cc:2150] SstFileManager instance 0000027B522E5A60
+2026/06/22-17:06:02.686945 8df0 DB pointer 0000027B522E2200
+2026/06/22-17:06:08.689208 8854 [db\db_impl\db_impl.cc:1141] ------- DUMPING STATS -------
+2026/06/22-17:06:08.689256 8854 [db\db_impl\db_impl.cc:1142] 
+** DB Stats **
+Uptime(secs): 6.0 total, 6.0 interval
+Cumulative writes: 1 writes, 2 keys, 1 commit groups, 1.0 writes per commit group, ingest: 0.00 GB, 0.00 MB/s
+Cumulative WAL: 1 writes, 1 syncs, 1.00 writes per sync, written: 0.00 GB, 0.00 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 1 writes, 2 keys, 1 commit groups, 1.0 writes per commit group, ingest: 0.00 MB, 0.00 MB/s
+Interval WAL: 1 writes, 1 syncs, 1.00 writes per sync, written: 0.00 GB, 0.00 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+Write Stall (count): write-buffer-manager-limit-stops: 0
+
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop Rblob(GB) Wblob(GB)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0       0.0       0.0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0       0.0       0.0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop Rblob(GB) Wblob(GB)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Blob file count: 0, total size: 0.0 GB, garbage size: 0.0 GB, space amp: 0.0
+
+Uptime(secs): 6.0 total, 6.0 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Write Stall (count): cf-l0-file-count-limit-delays-with-ongoing-compaction: 0, cf-l0-file-count-limit-stops-with-ongoing-compaction: 0, l0-file-count-limit-delays: 0, l0-file-count-limit-stops: 0, memtable-limit-delays: 0, memtable-limit-stops: 0, pending-compaction-bytes-delays: 0, pending-compaction-bytes-stops: 0, total-delays: 0, total-stops: 0
+Block cache LRUCache@0000027B540B4510#9020 capacity: 8.00 MB seed: 2108261376 usage: 0.08 KB table_size: 256 occupancy: 1 collections: 1 last_copies: 1 last_secs: 2.9e-05 secs_since: 0
+Block cache entry stats(count,size,portion): Misc(1,0.00 KB,0%)
+
+** File Read Latency Histogram By Level [default] **
+
+** Compaction Stats [Configuration] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop Rblob(GB) Wblob(GB)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0       0.0       0.0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0       0.0       0.0
+
+** Compaction Stats [Configuration] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop Rblob(GB) Wblob(GB)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Blob file count: 0, total size: 0.0 GB, garbage size: 0.0 GB, space amp: 0.0
+
+Uptime(secs): 6.0 total, 6.0 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Write Stall (count): cf-l0-file-count-limit-delays-with-ongoing-compaction: 0, cf-l0-file-count-limit-stops-with-ongoing-compaction: 0, l0-file-count-limit-delays: 0, l0-file-count-limit-stops: 0, memtable-limit-delays: 0, memtable-limit-stops: 0, pending-compaction-bytes-delays: 0, pending-compaction-bytes-stops: 0, total-delays: 0, total-stops: 0
+Block cache LRUCache@0000027B540B4510#9020 capacity: 8.00 MB seed: 2108261376 usage: 0.08 KB table_size: 256 occupancy: 1 collections: 1 last_copies: 1 last_secs: 2.9e-05 secs_since: 0
+Block cache entry stats(count,size,portion): Misc(1,0.00 KB,0%)
+
+** File Read Latency Histogram By Level [Configuration] **
+2026/06/22-17:06:08.689967 8854 [db\db_impl\db_impl.cc:751] STATISTICS:
+ rocksdb.block.cache.miss COUNT : 0
+rocksdb.block.cache.hit COUNT : 0
+rocksdb.block.cache.add COUNT : 0
+rocksdb.block.cache.add.failures COUNT : 0
+rocksdb.block.cache.index.miss COUNT : 0
+rocksdb.block.cache.index.hit COUNT : 0
+rocksdb.block.cache.index.add COUNT : 0
+rocksdb.block.cache.index.bytes.insert COUNT : 0
+rocksdb.block.cache.filter.miss COUNT : 0
+rocksdb.block.cache.filter.hit COUNT : 0
+rocksdb.block.cache.filter.add COUNT : 0
+rocksdb.block.cache.filter.bytes.insert COUNT : 0
+rocksdb.block.cache.data.miss COUNT : 0
+rocksdb.block.cache.data.hit COUNT : 0
+rocksdb.block.cache.data.add COUNT : 0
+rocksdb.block.cache.data.bytes.insert COUNT : 0
+rocksdb.block.cache.bytes.read COUNT : 0
+rocksdb.block.cache.bytes.write COUNT : 0
+rocksdb.bloom.filter.useful COUNT : 0
+rocksdb.bloom.filter.full.positive COUNT : 0
+rocksdb.bloom.filter.full.true.positive COUNT : 0
+rocksdb.persistent.cache.hit COUNT : 0
+rocksdb.persistent.cache.miss COUNT : 0
+rocksdb.sim.block.cache.hit COUNT : 0
+rocksdb.sim.block.cache.miss COUNT : 0
+rocksdb.memtable.hit COUNT : 0
+rocksdb.memtable.miss COUNT : 1
+rocksdb.l0.hit COUNT : 0
+rocksdb.l1.hit COUNT : 0
+rocksdb.l2andup.hit COUNT : 0
+rocksdb.compaction.key.drop.new COUNT : 0
+rocksdb.compaction.key.drop.obsolete COUNT : 0
+rocksdb.compaction.key.drop.range_del COUNT : 0
+rocksdb.compaction.key.drop.user COUNT : 0
+rocksdb.compaction.range_del.drop.obsolete COUNT : 0
+rocksdb.compaction.optimized.del.drop.obsolete COUNT : 0
+rocksdb.compaction.cancelled COUNT : 0
+rocksdb.number.keys.written COUNT : 2
+rocksdb.number.keys.read COUNT : 1
+rocksdb.number.keys.updated COUNT : 0
+rocksdb.bytes.written COUNT : 107
+rocksdb.bytes.read COUNT : 0
+rocksdb.number.db.seek COUNT : 3
+rocksdb.number.db.next COUNT : 0
+rocksdb.number.db.prev COUNT : 0
+rocksdb.number.db.seek.found COUNT : 0
+rocksdb.number.db.next.found COUNT : 0
+rocksdb.number.db.prev.found COUNT : 0
+rocksdb.db.iter.bytes.read COUNT : 0
+rocksdb.no.file.opens COUNT : 0
+rocksdb.no.file.errors COUNT : 0
+rocksdb.stall.micros COUNT : 0
+rocksdb.db.mutex.wait.micros COUNT : 0
+rocksdb.number.multiget.get COUNT : 0
+rocksdb.number.multiget.keys.read COUNT : 0
+rocksdb.number.multiget.bytes.read COUNT : 0
+rocksdb.number.merge.failures COUNT : 0
+rocksdb.bloom.filter.prefix.checked COUNT : 0
+rocksdb.bloom.filter.prefix.useful COUNT : 0
+rocksdb.bloom.filter.prefix.true.positive COUNT : 0
+rocksdb.number.reseeks.iteration COUNT : 0
+rocksdb.getupdatessince.calls COUNT : 0
+rocksdb.wal.synced COUNT : 1
+rocksdb.wal.bytes COUNT : 107
+rocksdb.write.self COUNT : 1
+rocksdb.write.other COUNT : 0
+rocksdb.write.wal COUNT : 1
+rocksdb.compact.read.bytes COUNT : 0
+rocksdb.compact.write.bytes COUNT : 0
+rocksdb.flush.write.bytes COUNT : 0
+rocksdb.compact.read.marked.bytes COUNT : 0
+rocksdb.compact.read.periodic.bytes COUNT : 0
+rocksdb.compact.read.ttl.bytes COUNT : 0
+rocksdb.compact.write.marked.bytes COUNT : 0
+rocksdb.compact.write.periodic.bytes COUNT : 0
+rocksdb.compact.write.ttl.bytes COUNT : 0
+rocksdb.number.direct.load.table.properties COUNT : 0
+rocksdb.number.superversion_acquires COUNT : 2
+rocksdb.number.superversion_releases COUNT : 0
+rocksdb.number.superversion_cleanups COUNT : 0
+rocksdb.number.block.compressed COUNT : 0
+rocksdb.number.block.decompressed COUNT : 0
+rocksdb.number.block.not_compressed COUNT : 0
+rocksdb.merge.operation.time.nanos COUNT : 0
+rocksdb.filter.operation.time.nanos COUNT : 0
+rocksdb.compaction.total.time.cpu_micros COUNT : 0
+rocksdb.row.cache.hit COUNT : 0
+rocksdb.row.cache.miss COUNT : 0
+rocksdb.read.amp.estimate.useful.bytes COUNT : 0
+rocksdb.read.amp.total.read.bytes COUNT : 0
+rocksdb.number.rate_limiter.drains COUNT : 0
+rocksdb.number.iter.skip COUNT : 0
+rocksdb.blobdb.num.put COUNT : 0
+rocksdb.blobdb.num.write COUNT : 0
+rocksdb.blobdb.num.get COUNT : 0
+rocksdb.blobdb.num.multiget COUNT : 0
+rocksdb.blobdb.num.seek COUNT : 0
+rocksdb.blobdb.num.next COUNT : 0
+rocksdb.blobdb.num.prev COUNT : 0
+rocksdb.blobdb.num.keys.written COUNT : 0
+rocksdb.blobdb.num.keys.read COUNT : 0
+rocksdb.blobdb.bytes.written COUNT : 0
+rocksdb.blobdb.bytes.read COUNT : 0
+rocksdb.blobdb.write.inlined COUNT : 0
+rocksdb.blobdb.write.inlined.ttl COUNT : 0
+rocksdb.blobdb.write.blob COUNT : 0
+rocksdb.blobdb.write.blob.ttl COUNT : 0
+rocksdb.blobdb.blob.file.bytes.written COUNT : 0
+rocksdb.blobdb.blob.file.bytes.read COUNT : 0
+rocksdb.blobdb.blob.file.synced COUNT : 0
+rocksdb.blobdb.blob.index.expired.count COUNT : 0
+rocksdb.blobdb.blob.index.expired.size COUNT : 0
+rocksdb.blobdb.blob.index.evicted.count COUNT : 0
+rocksdb.blobdb.blob.index.evicted.size COUNT : 0
+rocksdb.blobdb.gc.num.files COUNT : 0
+rocksdb.blobdb.gc.num.new.files COUNT : 0
+rocksdb.blobdb.gc.failures COUNT : 0
+rocksdb.blobdb.gc.num.keys.relocated COUNT : 0
+rocksdb.blobdb.gc.bytes.relocated COUNT : 0
+rocksdb.blobdb.fifo.num.files.evicted COUNT : 0
+rocksdb.blobdb.fifo.num.keys.evicted COUNT : 0
+rocksdb.blobdb.fifo.bytes.evicted COUNT : 0
+rocksdb.txn.overhead.mutex.prepare COUNT : 0
+rocksdb.txn.overhead.mutex.old.commit.map COUNT : 0
+rocksdb.txn.overhead.duplicate.key COUNT : 0
+rocksdb.txn.overhead.mutex.snapshot COUNT : 0
+rocksdb.txn.get.tryagain COUNT : 0
+rocksdb.number.multiget.keys.found COUNT : 0
+rocksdb.num.iterator.created COUNT : 3
+rocksdb.num.iterator.deleted COUNT : 3
+rocksdb.block.cache.compression.dict.miss COUNT : 0
+rocksdb.block.cache.compression.dict.hit COUNT : 0
+rocksdb.block.cache.compression.dict.add COUNT : 0
+rocksdb.block.cache.compression.dict.bytes.insert COUNT : 0
+rocksdb.block.cache.add.redundant COUNT : 0
+rocksdb.block.cache.index.add.redundant COUNT : 0
+rocksdb.block.cache.filter.add.redundant COUNT : 0
+rocksdb.block.cache.data.add.redundant COUNT : 0
+rocksdb.block.cache.compression.dict.add.redundant COUNT : 0
+rocksdb.files.marked.trash COUNT : 0
+rocksdb.files.marked.trash.deleted COUNT : 0
+rocksdb.files.deleted.immediately COUNT : 0
+rocksdb.error.handler.bg.error.count COUNT : 0
+rocksdb.error.handler.bg.errro.count COUNT : 0
+rocksdb.error.handler.bg.io.error.count COUNT : 0
+rocksdb.error.handler.bg.io.errro.count COUNT : 0
+rocksdb.error.handler.bg.retryable.io.error.count COUNT : 0
+rocksdb.error.handler.bg.retryable.io.errro.count COUNT : 0
+rocksdb.error.handler.autoresume.count COUNT : 0
+rocksdb.error.handler.autoresume.retry.total.count COUNT : 0
+rocksdb.error.handler.autoresume.success.count COUNT : 0
+rocksdb.memtable.payload.bytes.at.flush COUNT : 0
+rocksdb.memtable.garbage.bytes.at.flush COUNT : 0
+rocksdb.secondary.cache.hits COUNT : 0
+rocksdb.verify_checksum.read.bytes COUNT : 0
+rocksdb.backup.read.bytes COUNT : 0
+rocksdb.backup.write.bytes COUNT : 0
+rocksdb.remote.compact.read.bytes COUNT : 0
+rocksdb.remote.compact.write.bytes COUNT : 0
+rocksdb.hot.file.read.bytes COUNT : 0
+rocksdb.warm.file.read.bytes COUNT : 0
+rocksdb.cold.file.read.bytes COUNT : 0
+rocksdb.hot.file.read.count COUNT : 0
+rocksdb.warm.file.read.count COUNT : 0
+rocksdb.cold.file.read.count COUNT : 0
+rocksdb.last.level.read.bytes COUNT : 0
+rocksdb.last.level.read.count COUNT : 0
+rocksdb.non.last.level.read.bytes COUNT : 0
+rocksdb.non.last.level.read.count COUNT : 0
+rocksdb.last.level.seek.filtered COUNT : 0
+rocksdb.last.level.seek.filter.match COUNT : 0
+rocksdb.last.level.seek.data COUNT : 0
+rocksdb.last.level.seek.data.useful.no.filter COUNT : 0
+rocksdb.last.level.seek.data.useful.filter.match COUNT : 0
+rocksdb.non.last.level.seek.filtered COUNT : 0
+rocksdb.non.last.level.seek.filter.match COUNT : 0
+rocksdb.non.last.level.seek.data COUNT : 0
+rocksdb.non.last.level.seek.data.useful.no.filter COUNT : 0
+rocksdb.non.last.level.seek.data.useful.filter.match COUNT : 0
+rocksdb.block.checksum.compute.count COUNT : 0
+rocksdb.block.checksum.mismatch.count COUNT : 0
+rocksdb.multiget.coroutine.count COUNT : 0
+rocksdb.blobdb.cache.miss COUNT : 0
+rocksdb.blobdb.cache.hit COUNT : 0
+rocksdb.blobdb.cache.add COUNT : 0
+rocksdb.blobdb.cache.add.failures COUNT : 0
+rocksdb.blobdb.cache.bytes.read COUNT : 0
+rocksdb.blobdb.cache.bytes.write COUNT : 0
+rocksdb.read.async.micros COUNT : 0
+rocksdb.async.read.error.count COUNT : 0
+rocksdb.secondary.cache.filter.hits COUNT : 0
+rocksdb.secondary.cache.index.hits COUNT : 0
+rocksdb.secondary.cache.data.hits COUNT : 0
+rocksdb.table.open.prefetch.tail.miss COUNT : 0
+rocksdb.table.open.prefetch.tail.hit COUNT : 0
+rocksdb.timestamp.filter.table.checked COUNT : 0
+rocksdb.timestamp.filter.table.filtered COUNT : 0
+rocksdb.bytes.compressed.from COUNT : 0
+rocksdb.bytes.compressed.to COUNT : 0
+rocksdb.bytes.compression_bypassed COUNT : 0
+rocksdb.bytes.compression.rejected COUNT : 0
+rocksdb.number.block_compression_bypassed COUNT : 0
+rocksdb.number.block_compression_rejected COUNT : 0
+rocksdb.bytes.decompressed.from COUNT : 0
+rocksdb.bytes.decompressed.to COUNT : 0
+rocksdb.readahead.trimmed COUNT : 0
+rocksdb.fifo.max.size.compactions COUNT : 0
+rocksdb.fifo.ttl.compactions COUNT : 0
+rocksdb.prefetch.bytes COUNT : 0
+rocksdb.prefetch.bytes.useful COUNT : 0
+rocksdb.prefetch.hits COUNT : 0
+rocksdb.db.get.micros P50 : 7.000000 P95 : 7.000000 P99 : 7.000000 P100 : 7.000000 COUNT : 1 SUM : 7
+rocksdb.db.write.micros P50 : 1070.000000 P95 : 1070.000000 P99 : 1070.000000 P100 : 1070.000000 COUNT : 1 SUM : 1070
+rocksdb.compaction.times.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.compaction.times.cpu_micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.subcompaction.setup.times.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.table.sync.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.compaction.outfile.sync.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.wal.file.sync.micros P50 : 709.000000 P95 : 709.000000 P99 : 709.000000 P100 : 709.000000 COUNT : 1 SUM : 709
+rocksdb.manifest.file.sync.micros P50 : 652.500000 P95 : 830.000000 P99 : 830.000000 P100 : 830.000000 COUNT : 3 SUM : 2039
+rocksdb.table.open.io.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.db.multiget.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.read.block.compaction.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.read.block.get.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.write.raw.block.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.numfiles.in.singlecompaction P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.db.seek.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.db.write.stall P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.sst.read.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.flush.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.compaction.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.db.open.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.get.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.multiget.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.db.iterator.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.verify.db.checksum.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.file.read.verify.file.checksums.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.num.subcompactions.scheduled P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.bytes.per.read P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 1 SUM : 0
+rocksdb.bytes.per.write P50 : 107.000000 P95 : 107.000000 P99 : 107.000000 P100 : 107.000000 COUNT : 1 SUM : 107
+rocksdb.bytes.per.multiget P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.bytes.compressed P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.bytes.decompressed P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.compression.times.nanos P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.decompression.times.nanos P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.read.num.merge_operands P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.key.size P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.value.size P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.write.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.get.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.multiget.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.seek.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.next.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.prev.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.blob.file.write.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.blob.file.read.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.blob.file.sync.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.compression.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.blobdb.decompression.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.db.flush.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.sst.batch.size P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.num.index.and.filter.blocks.read.per.level P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.num.sst.read.per.level P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.error.handler.autoresume.retry.count P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.async.read.bytes P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.poll.wait.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.prefetched.bytes.discarded P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.multiget.io.batch.size P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.num.level.read.per.multiget P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.async.prefetch.abort.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.table.open.prefetch.tail.read.bytes P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+2026/06/22-17:06:09.687522 8854 [db\db_impl\db_impl.cc:965] ------- PERSISTING STATS -------
+2026/06/22-17:06:09.687574 8854 [db\db_impl\db_impl.cc:1035] [Pre-GC] In-memory stats history size: 16 bytes, slice count: 0
+2026/06/22-17:06:09.687583 8854 [db\db_impl\db_impl.cc:1044] [Post-GC] In-memory stats history size: 16 bytes, slice count: 0
+2026/06/22-17:09:37.278455 2c5c [db\db_impl\db_impl.cc:487] Shutdown: canceling all background work
+2026/06/22-17:09:37.282457 2c5c [db\db_impl\db_impl.cc:668] Shutdown complete
